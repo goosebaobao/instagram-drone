@@ -1,0 +1,51 @@
+{% extends "template.jinja2" %}
+{% block title %}instagram search{% endblock %}
+{% block body %}
+{% set PAGE_SZIE = config.INS_SEARCH_PAGE_SIZE %}
+<link rel='stylesheet' href='/static/css/instagram.css' />
+
+<form method='get' action='search?page=1'>
+    <div class='search_form'> 
+        <select name='owner'>
+            <option value=''>owner?</option>
+            {% for owner in owners %}
+            {% if req.get("owner") == onwer %}
+            <option value='{{ owner }}' selected>{{ owner }}</option>
+            {% else %}
+            <option value='{{ owner }}'>{{ owner }}</option>
+            {% endif %}
+            {% endfor %}
+        </select>
+        id <input type='text' name='id' value='{{ req.get("id", "") }}'>
+        tag <input type='text' name='tag' value='{{ req.get("tag", "") }}'>
+        <button type='submit'>search</button>
+    </div>
+</form>
+
+{% if medias %}
+{% for media in medias %}
+<div class='ins_media'>
+    <a href='/static/instagram/{{ media.id }}.jpeg' target='_blank'>
+        <img src='/static/instagram/{{ media.id }}.jpeg' class='ins_image'>
+    </a>
+    <div>
+        <a href='search?owner={{ media.owner }}'>{{ media.owner }}</a>
+        {% if media.is_video == "Y" %}
+            <a href='/static/instagram/{{ media.id }}.mp4' target='_blank'>
+                <img src='/static/image/video_play.png' class='video_play'>
+            </a>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+
+<div class='nav_bar'>
+{% with url = "&owner=" + req.get("owner", "") + "&id=" + req.get("id", "") + "&tag=" + req.get("tag", "") %}
+{% if page > 1 %}<a href='search?page={{ page - 1 }}{{ url }}'>prev</a>{% endif %}
+{% if page > 1 and medias|length == PAGE_SZIE %} | {% endif %}
+{% if medias|length == 6 %}<a href='search?page={{ page + 1 }}{{ url }}'>next</a>{% endif %}
+{% endwith %}
+</div>
+{% endif %}
+
+{% endblock %}

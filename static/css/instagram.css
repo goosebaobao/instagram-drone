@@ -1,0 +1,62 @@
+.search_form {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0px;
+}
+
+.search_form select {
+    height: 32px;
+    font-size: 12pt;
+    margin-left: 8px;
+    margin-right: 10px;
+}
+
+.search_form input {
+    height: 24px;
+    width: 190px;
+    margin-left: 6px;
+    margin-right: 10px
+}
+
+.search_form button {
+    width: 68px;
+    height: 30px;
+    font-size: 12pt;
+}
+
+.ins_media {
+    border: solid 1px silver;
+    margin: 10px;
+    padding: 10px;
+    float: left;
+    height: 380px;
+}
+
+.ins_media div {
+    font-size: 14px;
+    max-width: 278px;
+    padding: 8px 0px 0px 0px;
+    margin: 0px;
+}
+
+.ins_image {
+    width: 280px;
+    max-height: 350px;
+    display: block;
+}
+
+.video_play {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.nav_bar {
+    clear: both;
+    padding: 4px 0px 4px 10px;
+    text-align: right;
+    width: 948px;
+}
