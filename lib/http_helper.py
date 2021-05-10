@@ -8,7 +8,7 @@ TIMEOUT = (10, 60)
 
 # 代理服务器
 PROXIES = None
-PROXIES = {"http": "http://127.0.0.1:31080", "https": "http://127.0.0.1:31080"}
+# PROXIES = {"http": "http://127.0.0.1:31080", "https": "http://127.0.0.1:31080"}
 
 ENCODING = 'utf-8'
 
