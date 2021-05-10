@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
     log.debug('--------------------- start ---------------------')
 
-    # crawling()
-    # download_media()
+    crawling()
+    download_media()
 
     log.debug('--------------------- done ---------------------')
