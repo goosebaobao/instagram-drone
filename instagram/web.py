@@ -8,7 +8,6 @@ from instagram.dao import dao
 log = logging.getLogger('refusea.instagram.web')
 
 instagram = Blueprint('instagram', __name__, url_prefix='/instagram')
-instagram.add_app_template_global()
 
 owners = dao.list_onwers()
 
