@@ -9,7 +9,7 @@
         <select name='owner'>
             <option value=''>owner?</option>
             {% for owner in owners %}
-            {% if req.get("owner") == onwer %}
+            {% if req.get("owner") == owner %}
             <option value='{{ owner }}' selected>{{ owner }}</option>
             {% else %}
             <option value='{{ owner }}'>{{ owner }}</option>
